@@ -1,0 +1,122 @@
+<html>
+<head>
+<style type="text/css">
+h2.pos_left
+{
+position:relative;
+left:-20px
+}
+h2.pos_right
+{
+position:relative;
+left:20px
+}
+h2.pos_top{
+  top: 20px;
+}
+h2.pos_bottom{
+   top: -20px; 
+}
+div.line{
+    border-bottom: 2px solid #bababa
+}
+.mark{
+    font-size:30;
+    color:red;
+}
+#abs{
+    position:absolute;
+    left: 100px;
+    top: 500px;
+}
+#position_absolute{
+    height:300px;
+    width:100%;
+}
+#postition_fixed{
+    height:500px;
+    width:100%;
+}
+#postition_clip{
+    height:500px;
+    width: 100%;
+}
+#z-index_study{
+    height:500px;
+    width: 100%;
+}
+#fixed_right{
+    position:fixed;
+    top:800px;
+    right:5px;
+}
+#clipImg_absolute{
+    position:absolute;
+    clip:rect(0px 150px 150px 0px)
+}
+#clipImg_relative{
+    position:relative;
+    margin-top: 100px;
+    clip:rect(0px 150px 150px 0px)
+}
+#z-indexUp{
+    position:absolute;
+    clip:rect(0px 150px 150px 0px);
+    z-index: 1;
+}
+#z-indexDown{
+    position:absolute;
+    clip:rect(0px 150px 150px 0px);
+    z-index: -1;
+}
+</style>
+</head>
+    <body>
+        <div class='line' id="position_relative">
+            <div>相对定位,生成相对定位的元素，相对于其<span class="mark">正常位置</span>进行定位。</div>
+            <h2>正常</h2>
+            <h2 class="pos_left">向左20px</h2>
+            <h2 class="pos_right">向右20px</h2>
+            <h2 class="pos_top">向下20px发现没有作用</h2>
+            <h2 class="pos_bottom">向上-20px发现没有作用</h2>  
+        </div>
+        <div class='line' id='position_absolute'>
+            <div>生成绝对定位的元素，相对于static 定位以外的<span>第一个父元素</span>进行定位</div>
+            <div id="abs"><span class="mark">绝对定位left:100px;top:500px</span></div>
+        </div>
+        <div class="line" id="postition_fixed">
+            <div>固定定位,相对于浏览器窗口来对元素进行定位,一般用来做右下角小广告</div>
+            <div>可以发现不论如何滚动滚动条,下面的元素都在浏览器的相对位置不会变化</div>
+            <div id='fixed_right'>fixed定位top:800px;right:5px</div>
+        </div> 
+        <div class="line" id="position_clip">
+             <div>此元素被剪裁到这个形状内，并显示出来</div>
+             <div>四个坐标的top, right, bottom, left(坐标)</div>
+             <div>勤奋工作的江哥</div>
+             <div>
+                <div>裁剪图片,position为absoulte</div>
+                <div><img id='clipImg_absolute' src="img/saved_ha.jpg"></div>
+             </div>
+             <div>
+                <div><img id='clipImg_relative' src="img/saved_ha.jpg"></div>
+                <div>裁剪图片,position为relative;margin-top: 100px;</div>
+                <div>挡住了上方的勤奋工作江哥,只有当position设为absoulte时才能裁剪图片</div> 
+            </div>
+        </div>
+        <div class="line" id="z-index_study">
+            <div>Z-index可被用于将在一个元素放置于另一元素之后或者之前</div>
+         
+            <div>
+                <div>勤奋工作的江哥在下面被文字z-index:-1挡住</div>
+                <img id='z-indexDown' src="img/saved_ha.jpg" >
+                <div>z-index:-1</div>
+            </div>
+            
+            <div style="margin-top:200px;">
+                <div>勤奋工作的江哥在上面挡住了下方的文字:z-index:1</div>
+                <img id='z-indexUp' src="img/saved_ha.jpg" >
+                <div>z-index:1</div>
+            </div>
+        </div>    
+    </body>
+</html>
