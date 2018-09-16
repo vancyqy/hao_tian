@@ -1,0 +1,51 @@
+<html>
+<head>
+<style type="text/css">
+span
+{
+display: block
+}
+div.line{
+    border-bottom: 2px solid #bababa
+}
+.mark{
+    font-size:30;
+    color:red;
+    display:inline;
+}
+</style>
+</head>
+<body>
+
+<div class="line">
+    <div>display:block设置为块级元素,此元素前后会<span class="mark">带有换行符</span></div>
+    <span class=".span_block">块级元素1</span>
+    <span class=".span_block">块级元素2</span>
+</div>
+<div class="line">
+    <div>display:inline设置为行内元素,<mark>默认</mark>,内联元素，元素前后<mark>没有换行符</mark></div>
+    <span style="display:inline">块级元素1</span>
+    <span style="display:inline">块级元素2</span>
+</div>
+<div class="line">
+    <div>display:inline-block设置为行内块级元素</div>
+    <div>让元素具有块级元素和行内元素的特性：既可以设置<mark>长宽</mark>，可以让<mark>padding和margin生效</mark>，又可以和其他行内元素<mark>并排</mark></div>
+    <span style="display:inline-block;background-color:green;width: 100px;height: 20px;padding: 10px;">块级元素1 width: 100px;height: 20px;padding: 10px;</span>
+    <span style="display:inline-block;background-color: red;width: 60px;height: 80px;margin-left: 50px;">块级元素2 width: 60px;height: 80px;margin-left: 50px;</span>
+    <h1>行内块级元素与块级元素和行内元素的区别</h1>
+    <div>块级元素<mark>可以设置</mark>margin和padding属性因为每一块块级元素单独占一行</div>
+    <div>行内元素<mark>水平方向</mark>的margin和padding以产生边距效果，但是<mark>竖直方向</mark>不会产生边距效果</div>
+    <div>行内元素设置width和height<mark>无效</mark>，而且块级元素即使设置宽度也还是独占一行</div>
+</div>
+<div class="line">
+    <div>display:list-item元素作为列表显示</div>
+    <div style="display:list-item">1</div>
+    <div style="display:list-item">2</div>
+    <div style="display:list-item">3</div>
+    <span style="display:list-item">4</span>
+    <span style="display:list-item">5</span>
+    <div>为元素内容生成一个块型盒，随后再生成一个<mark>列表型</mark>的<mark>行内</mark>盒。其效果就和ul中出现项目列表符号一样。通俗地说就是会在内容前面自动加上黑点，而display:block则不会出现黑点</div>
+</div>
+
+</body>
+</html>
