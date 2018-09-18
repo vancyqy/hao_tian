@@ -49,6 +49,8 @@ div.line{
     position:fixed;
     top:800px;
     right:5px;
+    height: 100%;
+    background-color: green;
 }
 #clipImg_absolute{
     position:absolute;
@@ -87,7 +89,7 @@ div.line{
         <div class="line" id="postition_fixed">
             <div>固定定位,相对于浏览器窗口来对元素进行定位,一般用来做右下角小广告</div>
             <div>可以发现不论如何滚动滚动条,下面的元素都在浏览器的相对位置不会变化</div>
-            <div id='fixed_right'>fixed定位top:800px;right:5px</div>
+            <div id='fixed_right'>fixed定位top:800px;right:5px;bottom:0px</div>
         </div> 
         <div class="line" id="position_clip">
              <div>此元素被剪裁到这个形状内，并显示出来</div>

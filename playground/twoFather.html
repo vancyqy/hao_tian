@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+  #father1{
+     position: absolute;
+     top:20px;
+     left: 20px; 
+     width: 100px;
+     height: 100px;
+     background-color:red;
+     z-index: 1;
+  }
+  #father2{
+    position: absolute;
+    top: 20px;
+    left:20px;  
+    width: 100px;
+    height: 100px;
+    z-index:2;
+    background-color:green;
+  }
+  #child1{
+    width:50px;
+    height:50px;
+    background-color:dodgerblue;
+    z-index:3;
+  }
+  #child2{
+    width:50px;
+    height:50px;
+    z-index:2;
+    background-color:darkviolet;
+  }
+</style>
+<body>
+    <div id="father1">
+        <div id="child1"></div>
+    </div>
+    <div id="father2">
+        <div id="child2"></div>
+    </div>
+    <div style="margin-top:400px;">
+        <div>father1:z-index: 1;红色</div>
+        <div>father2:z-index: 2;绿色</div>
+        <div>child1:z-index: 3;蓝色</div>
+        <div>child2:z-index: 2;紫色</div>
+    </div>
+    <div style="margin-top:100px;">如果父元素A的z轴小于父元素B
+         但是父元素A的子元素A的z轴大于父元素B的子元素B
+    </div>
+</body>
+</html>
