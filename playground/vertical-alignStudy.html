@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+   .greenDiv{
+       width:200px;
+       height:200px;
+       background-color:green;
+       margin:10px;
+   }
+   .redDiv{
+       width:50px;
+       height:50px;
+       background-color:red;
+       display:inline-block;
+   }
+   div.line{   
+    border-bottom: 2px solid #bababa
+   }
+</style>
+<body>
+    <div class='greenDiv' style="vertical-align:baseline;">
+        要改
+        vertical-align:baseline;默认。元素放置在父元素的基线上。background-color:green;width:100px;height:100px;
+    </div>
+    <div class="line"></div>
+
+    <div style="margin:10px;">
+    vertical-align:<mark>sub</mark>;垂直对齐<div class="redDiv" style="vertical-align:sub;">redDiv</div>文本的<mark>下标</mark>
+    <div>redDiv:width:50px;height:50px;background-color:red;display:inline-block</div>
+    </div>
+    <div class="line"></div>
+
+    <div style="margin:10px;">
+    vertical-align:<mark>super</mark>垂直对齐<div class="redDiv" style="vertical-align:super;">redDiv</div>文本的<mark>上标</mark>
+    </div>
+    <div class="line"></div>
+
+    <div>
+
+    </div>
+</body>
+</html>
