@@ -22,27 +22,166 @@
    div.line{   
     border-bottom: 2px solid #bababa
    }
+
+    .ctn-block{
+        margin-top:20px;
+        display: block;
+        background-color: #bbb;
+        line-height: 200px;
+        font-size: 50px;
+    }
+    .ctn-block .child1{
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        margin:10px 0;
+        vertical-align: baseline;
+        background-color: aliceblue;
+    }
+    ul{
+        background-color: bisque;
+    }
+    ul .box_not_middle { 
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: aliceblue;
+    }
+    ul .box_middle{
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: aliceblue;
+        vertical-align:middle;
+    }
 </style>
 <body>
-    <div class='greenDiv' style="vertical-align:baseline;">
-        要改 
-        vertical-align:baseline;默认。元素放置在父元素的基线上。background-color:green;width:100px;height:100px;
-    </div>
-    <div class="line"></div>
-
-    <div style="margin:10px;">
-    vertical-align:<mark>sub</mark>;垂直对齐<div class="redDiv" style="vertical-align:sub;">redDiv</div>文本的<mark>下标</mark>
+    <div class="redDiv">redDiv</div>
     <div>redDiv:width:50px;height:50px;background-color:red;display:inline-block</div>
+
+    <div style="margin-top:50px">
+        <div>不同的文字拥有不同的基线</div>
+        <img src="img/baseline.jpg" style="border:3px solid #baba">
+    </div>
+
+    <div style="margin-top: 20px;">
+        vertical-align:baseline;默认。元素放置在父元素的基线<div class="redDiv" style="vertical-align:baseline"></div>上
     </div>
     <div class="line"></div>
 
     <div style="margin:10px;">
-    vertical-align:<mark>super</mark>垂直对齐<div class="redDiv" style="vertical-align:super;">redDiv</div>文本的<mark>上标</mark>
+    vertical-align:<mark>sub</mark>;垂直对齐<div class="redDiv"></div><sub style="vertical-align:sub">sub</sub>文本的<mark>下标</mark>
     </div>
     <div class="line"></div>
 
-    <div>
-
+    <div style="margin:10px;">
+    vertical-align:<mark>super</mark>垂直对齐<div class="redDiv" style="vertical-align:super;"></div><sup>sup</sup>文本的<mark>上标</mark>
     </div>
+    <div class="line"></div>
+
+    <div>text-top属性实例：</div>
+    <div>
+        css样式：
+        <div>.ctn-block{display: block;background-color: #bbb;line-height: 200px;font-size: 50px; }</div>
+        <div>.ctn-block .child1{display: inline-block;width: 100px;height: 100px;margin:10px 0;vertical-align: baseline;background-color: aliceblue;}</div>
+    </div>
+    <img src="img/ctn-block.jpg">
+    <div class="line"></div>
+
+    <div style="margin:10px;">
+    vertical-align:<mark>text-top</mark>元素的<mark>顶端</mark>与父元素字体的<mark>顶端(margin-top边界)</mark>对齐
+
+    <div class="ctn-block">
+            <div class="child1"  style="vertical-align:text-top;"></div>
+            <span>Gg</span>
+    </div>
+    </div>
+    
+    <div class="line"></div>
+
+    <div style="margin:10px">
+    vertical-align:<mark>text-bottom</mark>元素的<mark>底端</mark>与父元素字体的<mark>底端(margin-bottom边界)</mark><span style="vertical-align:text-bottom;">对齐</span>
+    <div class="ctn-block">
+            <div class="child1"  style="vertical-align:text-bottom;"></div>
+            <span>Gg</span>
+    </div>
+    </div>
+    <div class="line"></div>
+    
+    <div style="margin:10px">
+    vertical-align:<mark>middle</mark>把此元素放置在父元素的<mark>中部</mark>
+    <div class="ctn-block">
+            <div class="child1"  style="vertical-align:middle;"></div>
+            <span>Gg</span>
+    </div>
+    </div>
+    <div class="line"></div>
+
+    <div style="margin:10px">
+    vertical-align:<mark>bottom</mark>把元素的顶端与<mark>行中最低</mark>的元素的<mark>顶端</mark>对齐
+    <div class="ctn-block">
+            <div class="child1"  style="vertical-align:bottom;"></div>
+            <span>Gg</span>
+    </div>
+    </div>
+
+    <div style="margin:10px;">
+    vertical-align:<mark>top</mark>元素的顶端与行中<mark>最高</mark>元素<div class="redDiv" style="height:100px;"></div>的<mark>顶端</mark><span style="vertical-align:top;">
+    对齐
+    </span>
+    <div>红色元素：class=redDiv;height:100px</div>
+    </div>
+    <div class="line"></div>
+
+    <div style="margin:10px">
+    vertical-align:<mark>100 px;</mark>升高（正值）或降低（负值）子元素盒子。值为升高/降低的距离，如果为0，和<mark>vertical-align:baseline一样()</mark>
+    </div>
+    <div>vertical-align:<mark>xxx %;</mark>同理</div>
+    <div class="ctn-block">
+            <div class="child1"  style="vertical-align:100px;"></div>
+            <span>Gg</span>
+    </div>
+    </div>
+    <div class="line" style="border-color:black"></div>
+
+    <div style="font-size: 30px;color:red;margin: 10px">实用技巧</div>
+    <div>inline-block并排显示的元素<mark>下方与水平方向</mark>有空隙</div>
+    <div>有空隙的情况：</div>
+    <div>
+            <ul>
+                <li class="box_not_middle"></li>
+                <li class="box_not_middle"></li><li class="box_not_middle"></li>
+            </ul>
+            <div>可以见到上分每个元素离下方有一点点空隙</div>
+            <div>样式:</div>
+            <div>
+                ul{background-color: bisque;}
+            </div>
+            <div>
+                ul box_not_middle{display: inline-block;width: 100px;height: 100px;background-color: aliceblue;}
+            </div>
+    </div>
+    <div style="margin-top:10px;">解决方法：</div>
+    <div>
+        <div>解决垂直空隙：将li的vertical-align设为middle</div>
+        <ul>
+                <li class="box_middle"></li>
+                <li class="box_middle"></li><li class="box_middle"></li>
+        </ul>
+    </div>
+    <div>有水平空隙的原因如图：</div>
+    <img src="img/box_middle.jpg" alt="">
+    <div>因为li元素之间(红框标识处)进行了换行,浏览器把换行单独识别成一个空白节点,所以会出现空隙</div>
+    <div>解决方法是在li元素之间用注释分割换行</div>
+    <div>如图：</div>
+    <img src="img/box_middle_center_space.jpg" alt="">
+    <div>效果：</div>
+    <ul>
+            <li class="box_middle"></li><!--
+            --><li class="box_middle"></li><!--
+            --><li class="box_middle"></li>
+    </ul>
+
+
 </body>
 </html>
