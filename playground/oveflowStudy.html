@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+div.line{   
+    border-bottom: 2px solid #bababa
+}
+div.show{
+background-color:#00FFFF;
+width:150px;
+height:150px;
+}
+</style>
+<body>
+    <p>如果元素中的内容超出了给定的宽度和高度属性，overflow 属性可以确定是否显示滚动条等行为。</p>
+
+    <div>
+        <div>overflow:<mark>visible</mark>默认值。内容不会被修剪，会呈现<mark>在元素框之外</mark></div>
+            <div style="overflow:visible" class="show">
+            这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要，用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也会出现滚动条。默认值是 visible。
+            </div>
+    </div>
+    <div class="line" style="margin-top:4rem"></div>
+
+    <div>
+        <div>overflow:<mark>hidden</mark>内容<mark>会被修剪</mark>，并且其余内容是<mark>不可见</mark>的</div>
+           <div style="overflow:hidden" class="show" style="margin-top:2rem">
+            这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要，用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也会出现滚动条。默认值是 visible。
+           </div>
+    </div>
+    <div class="line"></div>
+
+    <div>
+        <div>overflow:<mark>scroll</mark>内容会被<mark>修剪</mark>，但是浏览器会<mark>显示滚动条</mark>以便查看其余的内容</div>
+            <div style="overflow:scroll" class="show" style="margin-top:2rem">
+                这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要，用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也会出现滚动条。默认值是 visible。
+            </div>
+
+            <div style="overflow:scroll;margin-top: 1rem;" class="show">这个任然会有滚动条</div>
+        </div>
+    <div class="line"></div>
+
+    <div>
+        <div>overflow:<mark>auto</mark>  <mark>如果</mark>内容<mark>被修剪</mark>，则浏览器会<mark>显示滚动条</mark>以便查看其余的内容。</div>
+            <div style="overflow:auto" class="show" style="margin-top:2rem">
+                这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要，用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也会出现滚动条。默认值是 visible。
+            </div>
+
+            <div style="overflow:auto;margin-top: 1rem;" class="show">这个就不会有滚动条</div>
+        </div>
+    <div class="line"></div>
+</body>
+</html>
