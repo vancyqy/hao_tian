@@ -54,6 +54,55 @@
         background-color: aliceblue;
         vertical-align:middle;
     }
+    .ctn-block{
+        background-color: #bbb;
+    }
+    .ctn-block .child {
+    display: inline-block;
+    width: 100px;
+    background-color: aliceblue;
+    }
+    .ctn-block .child-1 {
+        height: 100px;
+    }
+    .ctn-block .child-2 {
+        height: 200px;
+    }
+    .ctn-block .child-3 {
+        height: 300px;
+    }
+
+    .ctn-block .child-1_answer {
+        height: 100px;
+        vertical-align: middle;
+    }
+    .ctn-block .child-2_answer {
+        height: 200px;
+        vertical-align:top;
+    }
+    .ctn-block .child-3_answer {
+        height: 300px;
+        vertical-align: middle;
+    }
+    #iconPicture{
+        background-image: url('./img/jg.jpg');
+        width:20px;
+        height:20px;
+        background-size:100% 100%;
+        background-repeat:no-repeat;
+        display: inline-block;
+    }
+    #iconTxt{
+        display: inline-block;
+        margin-left: 2px;
+    }
+    #iconLog{
+        display: inline-block;
+        text-align: center;
+        overflow: hidden;
+        background-color: aqua;
+    }
+复制代码
 </style>
 <body>
     <div class="redDiv">redDiv</div>
@@ -145,7 +194,7 @@
     <div class="line" style="border-color:black"></div>
 
     <div style="font-size: 30px;color:red;margin: 10px">实用技巧</div>
-    <div>inline-block并排显示的元素<mark>下方与水平方向</mark>有空隙</div>
+    <div>1.inline-block并排显示的元素<mark>下方与水平方向</mark>有空隙</div>
     <div>有空隙的情况：</div>
     <div>
             <ul>
@@ -181,7 +230,47 @@
             --><li class="box_middle"></li><!--
             --><li class="box_middle"></li>
     </ul>
-
-
+    <div class="line" style="border-color:black"></div>
+    <div>2.有三个div元素，分别为100px,200px,300px,想让100px的居中显示</div>
+    <div class="ctn-block">
+        <div class="child child-1"></div>
+        <div class="child child-2"></div>
+        <div class="child child-3"></div>
+    </div>
+    <div>样式：
+        <div>.ctn-block{background-color: #bbb;}</div>
+        <div> .ctn-block .child {display: inline-block;width: 100px;background-color: aliceblue;}</div>
+    </div>
+    <div>解决方法1：</div>
+    <div>
+        <div class="ctn-block">
+            <div class="child child-1_answer"></div>
+            <div class="child child-2_answer"></div>
+            <div class="child child-3_answer"></div>
+        </div>
+    </div>
+    <div>
+       将最左侧想要居中的元素的vertical-align设为middle,最高的同样设为middle,中间的视情况设为top或bottom
+    </div>
+    <div style="color:red">评价：不是太灵活，在动态生成元素时不方便判断，只能在做大的页面布局时使用！</div>
+    <div class="line" style="border-color:black"></div>
+    <div style="margin:10px">3.ico和文字对齐</div>
+    <div id="iconDiv">
+      <div id="iconPicture"></div>
+      <span id="iconTxt">您还未登陆</span>
+      <div id="iconLog">立刻登陆</div>        
+    </div>
+    <mark>可以发现登陆条不在一行上，内部各个元素都有细微的偏差</mark>
+    <div>样式：</div>
+    <div style="margin:5px;">图标 #iconPicture{background-image: url('./img/jg.jpg');width:20px;height:20px;background-size:100% 100%;background-repeat:no-repeat;display: inline-block;}</div>
+    <div style="margin:5px;">"还未登陆" #iconTxt{display: inline-block;margin-left: 2px;}</div>
+    <div style="margin:5px;">"立刻登陆" #iconLog{display: inline-block;text-align: center;overflow: hidden;background-color: aqua;}</div>
+    
+    <div style="margin-top:2rem;">解决方法：给三个样式都加上<mark>vertical-align: middle;</mark>这样就都在一行上了</div>
+    <div id="iconDiv">
+      <div id="iconPicture" style="vertical-align: middle;"></div>
+      <span id="iconTxt" style="vertical-align: middle;">您还未登陆</span>
+      <div id="iconLog" style="vertical-align: middle;">立刻登陆</div>        
+    </div>
 </body>
 </html>
