@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div style="font-weight:normal">normal</div>
+    <div style="font-weight:bold">bold</div>
+    <div style="font-weight:bolder">bolder</div>
+    <div style="font-weight:lighter">lighter</div>
+    <div style="font-weight:100">100</div>
+    <div style="font-weight:200">200</div>
+    <div style="font-weight:300">300</div>
+    <div style="font-weight:400">400相当于normal</div>
+    <div style="font-weight:500">500</div>
+    <div style="font-weight:600">600</div>
+    <div style="font-weight:700">700相当于bold</div>
+    <div style="font-weight:800">800</div>
+    <div style="font-weight:900">900</div>
+
+    <div style="margin-top:3%">问题1：发现规律100——300字体大小一样，400——500字体大小一样，600——900大小一样</div>
+    <div style="margin-bottom:3%">原因：给定的字体系列少于九个字体粗细基本在这种情况下使用一种预先定义的方式来填充缺失的空隙。</div>
+    <mark>填补空隙的规律：</mark>
+    <div>
+        <div>100|200|300中任一值缺失：和下一级<mark>较细</mark>的值<mark>相同</mark>。如果<mark>没有</mark>，则和下一级<mark>较粗</mark>的值相同</div>
+        <div>400的大小一般不会缺少，因为是normal大小，缺失了字体就没意义了</div>
+        <div>500缺失：和<mark>400</mark>相同</div>
+        <div>600|700|800|900任一值缺失：和<mark>下一级较粗</mark>的值相同。如果<mark>没有</mark>，则和<mark>下一级较细</mark>的值相同</div>
+        <img  style='margin:3%;' src="img/font-weight.jpg" alt="">
+        <div>一般网页中也就<mark>三种粗细度</mark>，不然突出不了内容</div>
+    </div>
+    <div style="margin-top:3%">问题2：发现bold和bolder粗细没有区别</div>
+    <div>原因:见问题1，由于一般字体只有三种粗细度</div>
+    <div>bolder和lighter的粗细是相对于<mark>上级父元素的继承值</mark>而言的</div>
+    <div>bolder就是匹配字体集中可用的<mark>下一级较粗字体</mark>,bolder匹配<mark>下一级较细字体</mark></div>
+    <img src="img/bolder.jpg" style="margin:3%" alt="">
+    <div style="font-weight:100;background-color:#baba">
+        <div>font-weight:100</div>
+        <div style="font-weight:lighter">lighter,font-weight:100;不能再小了</div>
+        <div style="font-weight:bolder">bolder,font-weight:400</div>
+    </div>
+
+    <div style="font-weight:400;background-color:#baba;margin-top:1%;">
+            <div>font-weight:400;normal大小</div>
+            <div style="font-weight:lighter">lighter,font-weight:100;</div>
+            <div style="font-weight:bolder">bolder,font-weight:700</div>
+            <div style="font-weight:600">font-weight:600,这里600的大小和700一样，是因为<mark>补差规则</mark>，见问题1</div>
+        </div>
+</body>
+</html>
