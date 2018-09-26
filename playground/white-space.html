@@ -59,6 +59,37 @@
     <div style='margin-top:1%;white-space:nowrap;width: 100px;background-color:green'>white-space:normal;width: 100px;background-color:green</div>
     <div>文字不会换行</div>
     <div class='line'></div>
+
+    <div>white-space:<mark>pre-wrap</mark></div>
+    <div style='white-space:pre-wrap;background-color:#baba;margin:1%;'>
+        <div>效果：</div>
+        示例 文本 123;
+示例文本;
+
+        
+        示例文本;
+        示例文     本;
+        示例文本;
+    </div>
+    <img src="img/whiteSpace为pre-wrap.jpg" alt="">
+    <div>可以将效果与代码截图比较，保留每行文字间的<mark>空白</mark>，但是正常地进行<mark>换行</mark></div>
+    <div class='line'></div>
+
+    
+    <div>white-space:<mark>pre-line</mark></div>
+    <div style='white-space:pre-line;background-color:#baba;margin:1%;'>
+        <div>效果：</div>
+        示例 文本 123;
+        示例文本;
+
+
+    示例文本;
+        示例文     本;
+        示例文本;
+    </div>
+    <img src="img/whiteSpace为pre-line.jpg" alt="">
+    <div>可以将效果与代码截图比较，每行文字间的空白<mark>被合并为一个</mark>每行开头的空隙也被忽略，但是正常地进行<mark>换行</mark></div>
+    <div class='line'></div>
 </body>
 
 </html>
