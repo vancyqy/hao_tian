@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+div.line{
+   border-bottom: 2px solid #bababa
+}
+</style>
+<body>
+    <h1 style="color:red">padding内边距与margin大体相同，但是不同的时<mark>margin</mark>可以设为负数,<mark>padding</mark>不可</h1>
+    <div>margin 属性接受任何长度单位</div>
+    <div>margin的值可以设置为%,为<mark>父元素宽度</mark>的百分比</div>
+    <div style="background-color:green;width:200px;height:200px;">
+         <span>父元素width:200px</span>
+         <div style="background-color:red;width:100px;height:100px;margin:30%">
+             <span>子元素margin:30%</span>
+         </div>
+    </div>
+    <div>在浏览器内查看边距</div>
+    <img src="img/margin%.jpg" alt="">
+    <div class="line"></div>
+    <div>在不单独设置margin-left;margin-right;时与内边距的设置相同，这些值的顺序是从上外边距 (margin-top) 开始围着元素<mark>顺时针</mark>旋转的：</div>
+    <div style="margin-top:1rem">margin: 上 右 下 左</div>
+    <div style="background-color:green;width:200px;height:200px;margin:2rem 1rem 1rem 3rem">margin:2rem 1rem 1rem 3rem</div>
+    <div>在浏览器内查看边距</div>
+    <img src="img/margin.jpg" alt="">
+    <div class="line"></div>
+    <div>当margin只有两个参数</div>
+    <div>margin:上下 左右</div>
+    <div style="background-color:green;width:200px;height:200px;margin:2rem 1rem">margin:2rem 1rem</div>
+    <div>在浏览器内查看边距</div>
+    <img src="img/margin2.jpg" alt="">
+    <div class="line"></div>
+    <div>当margin只有三个参数</div>
+    <div>margin:上 左右 下</div>
+    <div style="background-color:green;width:200px;height:200px;margin:1rem 2rem 3rem">margin:1rem 2rem 3rem</div>
+    <div>在浏览器内查看边距</div>
+    <img src="img/margin3.jpg" alt="">
+    <div class="line"></div>
+    <div>使用缺省参数有个缺点，比如说我像设置上和左的外边距为2rem，右与下为1rem 但是由于<mark>没有规则</mark>能直接设置上与左(右与下同理)，所以四个参数都得写</div>
+    <div style="background-color:green;width:200px;height:200px;margin:2rem 1rem 1rem 2rem">margin:2rem 1rem 1rem 2rem</div>
+    <div>在浏览器内查看边距</div>
+    <img src="img/margin4.jpg" alt="">
+</body>
+</html>
