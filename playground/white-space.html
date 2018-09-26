@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div.line {
+        border-bottom: 2px solid #bababa;
+        margin-bottom: 2%;
+    }
+</style>
+
+<body>
+    <div>white-space:<mark>normal(默认)</mark></div>
+    <div style='white-space:normal;background-color:#baba;margin:1%;'>
+        <div>效果：</div>
+        示例 文本 123;示例文本;
+        示例文本;<br>
+        示例文本;
+        示例文本;
+        示例文本;
+    </div>
+    <img src="img/whiteSpace为normal.jpg" alt="">
+    <div>可以将效果与代码截图比较，发现<mark>换行被忽略</mark>文字显示在一行内遇到<"br">标签会强制换行</div>
+    <div class='line'></div>
+
+    <div>white-space:<mark>pre</mark></div>
+    <div style='white-space:pre;background-color:#baba;margin:1%;'>
+        <div>效果：</div>
+        示例 文本 123;
+        示例文本;
+        示例文本;
+        示例文     本;
+        示例文本;
+    </div>
+    <img src="img/whiteSpace为pre.jpg" alt="">
+    <div>可以将效果与代码截图比较，<mark>换行与文字间的空格被保留</mark>,效果与<'pre'>标签类似，适合用于显示代码</div>
+    <div class='line'></div>
+
+    <div>white-space:<mark>nowrap</mark></div>
+    <div style='white-space:nowrap;background-color:#baba;margin:1%;'>
+        <div>效果:</div>
+        示例 文本<br> 123;
+        示例文本;
+        示例文本;<br>
+        示例文     本;
+        示例文本;
+    </div>
+    <img src="img/whiteSpace为nowrap.jpg" alt="">
+    <div>可以将效果与代码截图比较，在遇到<"br">标签前不会换行</div>
+    <div style="margin-top:1%">但值得注意的是，虽然normal和nowrap属性遇到<"br">标签都会换行但是二者任有区别</div>
+    <div>normal在文字宽度要超过元素宽度时会自动换行，但是nowrap属性不会</div>
+    <div style='white-space:normal;width: 100px;background-color:green'>white-space:normal;width: 100px;background-color:green</div>
+    <div>可以看到虽然文字仍然超出了元素的宽度，但是会自动换行</div>
+    <div style='margin-top:1%;white-space:nowrap;width: 100px;background-color:green'>white-space:normal;width: 100px;background-color:green</div>
+    <div>文字不会换行</div>
+    <div class='line'></div>
+</body>
+
+</html>
